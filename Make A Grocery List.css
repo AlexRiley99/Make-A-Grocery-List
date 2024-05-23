@@ -1,0 +1,279 @@
+/*WHOLE PAGE*/
+html{
+    /*fallback color*/
+    background-color: darkolivegreen;
+    /*gradient*/
+    background-image: linear-gradient(to bottom right, darkolivegreen, rgb(46, 67, 12), rgb(40, 57, 5), rgb(22, 34, 1));
+    font-family: Garamond;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/*TOOLTIP*/
+#tooltip{
+    display: inline-block;
+    margin: 20px 0 0 100px;
+    box-shadow: 0px 5px 10px rgb(2, 0, 24);
+}
+
+#tooltipEdit{
+    display: inline-block;
+    margin: 5px 30px 5px 10px;
+    box-shadow: 0px 5px 10px rgb(2, 0, 24);
+}
+#tooltipEdit .tooltipText{
+    visibility: hidden;
+    width: 200px;
+    height: 200px;
+    background-color: burlywood;
+    color: black;
+    border: 2px solid black;
+    text-align: left;
+    padding: 10px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    font-family: serif;
+}
+
+#tooltip .tooltipText{
+    visibility: hidden;
+    width: 250px;
+    height: 650px;
+    background-color: burlywood;
+    color: black;
+    border: 2px solid black;
+    text-align: left;
+    padding: 10px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    font-family: serif;
+}
+
+#tooltip:hover .tooltipText,
+#tooltip:focus .tooltipText, 
+#tooltipEdit:hover .tooltipText,
+#tooltipEdit:focus .tooltipText{
+    visibility: visible;
+}
+
+/*DIV*/
+div{
+    background-color: wheat;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+#formDiv{
+    margin: 20px auto 10px auto;
+    text-align: center;
+    display: block;
+    border: 3px solid rosyBrown;
+    width: 90%;
+    box-shadow: -5px 5px 10px rgb(2, 0, 24);
+}
+
+#buttonDiv{
+    text-align: center;
+    margin: auto;
+}
+
+#listDiv{
+    margin: 10px auto;
+    font-family: "Courier New";
+    border: 3px solid rosyBrown;
+    display: block;
+    width: 90%;
+    box-shadow: -5px 5px 10px rgb(2, 0, 24);
+}
+#listHeaders{
+    margin: auto;
+    text-align: center;
+    display: block;
+}
+
+#itemDiv{
+    width: 60%;
+}
+#quantityDiv{
+    width: 15%;
+}
+#costDiv{
+    width: 15%;
+}
+
+#calculationsDiv{
+    border: 1px solid black;
+}
+
+#listEditorDiv{
+    margin: 10px auto;
+    border: 3px solid rosyBrown;
+    display: block;
+    width: 90%;
+    box-shadow: -5px 5px 10px rgb(2, 0, 24);
+    display: none;
+    text-align: center;
+}
+#listEditor{
+    display: none;
+    border: 1px solid black;
+    margin: 5px;
+}
+#newValuesDiv{
+    display: none;
+}
+
+/*FIELDSET*/
+fieldset{
+    border-radius: 25px;
+}
+legend{
+    text-align: center;
+    font-weight: bold;
+}
+
+#listInfo{
+    margin: 10px;
+}
+/*BUTTONS*/
+#add, #edit, #editAnother, #replace{
+    color: white;
+    background-color: rgb(2, 2, 177);
+}
+#add:hover, #edit:hover, #editAnother:hover,
+#replace:hover{
+    background-color: rgb(68, 68, 170);
+}
+#add:active, #edit:active, #editAnother:active,
+#replace:active{
+    background-color: rgb(116, 116, 169);
+}
+
+#done, #setBudget, #confirmEdit, #finishEditing{
+    color: white;
+    background-color: green;
+}
+#done:hover, #setBudget:hover, #confirmEdit:hover, #finishEditing:hover{
+    background-color: rgb(47, 187, 47);
+}
+#done:active, #setBudget:active, #confirmEdit:active, #finishEditing:active{
+    background-color: rgb(116, 230, 116);
+}
+
+#clear, #budgetClear, #delete, #cancelEdit,
+#remove{
+    color: white;
+    background-color: rgb(178, 3, 3);
+}
+#clear:hover, #budgetClear:hover, #delete:hover, #cancelEdit:hover,
+#remove:hover{
+    background-color: rgb(250, 66, 66);
+}
+#clear:active, #budgetClear:active, #delete:active, #cancelEdit:hover,
+#remove:active{
+    background-color: rgb(249, 139, 139);
+}
+
+.button{
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 3px;
+    padding: 5px;
+    width: 100px;
+    height: 30px;
+    font-family: serif;
+    transition: background-color 0.5s ease;
+}
+
+/*INPUTS*/
+#budgetCheck{
+    display: inline-block;
+}
+
+#budgetAmount{
+    display: inline-block;
+    margin: 5px auto 20px auto;
+    width: 100px;
+}
+
+.makeList{
+    display: inline-block;
+    text-align: center;
+}
+
+#itemName{
+    margin-bottom: 5px;
+    width: 500px;
+}
+#itemQuantity{
+    margin-bottom: 5px;
+    width: 100px;
+}
+#itemCost{
+    margin: 5;
+    width: 100px;
+}
+#editItem{
+    width: 50px;
+}
+.newList{
+    margin: 5px auto;
+}
+
+/*OUTPUTS*/
+.calcValues, .calcLabels{
+    display: inline;
+}
+
+.overUnderOutput{
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+}
+#underBudget, #onBudget{
+    color: green;
+}
+#overBudget{
+    color: red;
+}
+
+/*LIST FORMATTING*/
+.listColumn{
+    display: inline-block;
+    border: 1px solid black;
+    color: black;
+}
+.listHeader{
+    text-decoration: underline;
+    text-align: center;
+}
+
+#listQuantity{
+    width: 15%;
+    text-align: left;
+}
+
+#listItems{
+    text-align: left;
+}
+
+#listCosts{
+    text-align: left;
+}
+
+/*FOOTER*/
+footer{
+    color: white;
+    text-align: center;
+    margin: auto;
+}

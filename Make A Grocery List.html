@@ -1,0 +1,118 @@
+<!DOCTYPE html >
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Make A Grocery List</title>
+        <link rel="stylesheet" href="Make A Grocery List.css">
+        <script src="Make A Grocery List.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Make A Grocery List!</h1><div id="tooltip" class="makeList" aria-label="More Info">&#x2753;
+                <span class="tooltipText">
+                    <h3 style="text-decoration: underline; text-align: center;">Instructions:</h3>
+                    <ol>
+                        <li>Enter your budget amount and press "Set Budget". 
+                            This number will display under "Your List"</li>
+                        <li>Indicate whether you'd like to be alerted
+                            if you go over budget. If yes, you'll be given an 
+                            alert if you enter an item that would put you over 
+                            your allotted budget amount.
+                        </li>
+                        <li>Enter the name of an item.</li>
+                        <li>Enter how many you'd like to buy. Items such as a bunch of 
+                            bananas or multi-pack of juice boxes count as one item
+                        </li>
+                        <li>Enter the anticipated cost. Please enter
+                            the cost of only one item, even if you plan on
+                            buying multiple. 
+                        </li>
+                        <li>Press the "Add" button and your list items
+                            will appear under "Your List".
+                        </li>
+                        <li>Repeat steps 3-6 until your list is complete.</li>
+                        <li>Press "Done" to see your total and the
+                            difference between your total and your budget. If you press "Done"
+                            before you press "Add" on your final item, just press "Add" one last
+                            time and then press "Done" to re-calculate all values.
+                        </li>
+                    </ol>
+                </span>
+            </div>
+        </header>
+
+        <div id="formDiv">
+            <form>
+                <fieldset id="budgetInfo">
+                    <legend>Set Your Budget</legend>
+                    <label for="budgetAmount">Budget Amount: $ </label><input type="text" id="budgetAmount" placeholder="Ex: 200">
+                    <h5 id="alertMe">Alert Me If I Go Over Budget <input type="checkbox" id="budgetCheck"></h5>
+                </fieldset>
+                <input type="button" value="Set Budget" id="setBudget" class="button"><input type="reset" value="Clear" id="budgetClear" class="button">
+                <fieldset id="listInfo">
+                    <legend>Make Your List</legend>
+                    <label for="itemName">Item: </label><input type="text" id="itemName" class="makeList" placeholder="Ex: Apples" max-lengt=30><br>
+                    <label for="itemQuantity">Quantity: </label><input type="text" id="itemQuantity" class="makeList" placeholder="Ex: 5"><br>
+                    <label for="itemCost">Anticipated Cost: $ </label><input type="text" id="itemCost" class="makeList" placeholder="Ex: 1">
+                </fieldset>
+                <div id="buttonDiv">
+                <input type="button" value="Done" id="done" class="button"><input type="button" value="Add" id="add" class="button"><input type="reset" value="Clear" id="clear" class="button">
+                </div>
+            </form>
+        </div>
+        <div id="listDiv">
+            <h2 style="margin: auto; text-align: center;">Your List</h2>
+                <div id="itemDiv" class="listColumn">
+                <h3 id="itemHeader" class="listHeader">Item</h3>
+                <h4 id="listItems"></h4>
+            </div><div id="quantityDiv" class="listColumn">
+                <h3 id="quantityHeader" class="listHeader">Quantity</h3>
+                <h4 id="listQuantities"></h4>
+            </div><div id="costDiv" class="listColumn">
+                <h3 id="costHeader" class="listHeader">Cost</h3>
+                <h4 id="listCosts"></h4>
+            </div>
+
+            <div id="calculationsDiv">
+            <h4 class="calcLabels">Total: </h4><h4 id="total" class="calcValues"></h4><br>
+            <h4 class="calcLabels">Budget: </h4><h4 id="budget" class="calcValues"></h4><br>
+            <h4 class="calcLabels">Difference: </h4><h4 id="difference" class="calcValues"></h4><br>
+            <h4 id="overUnder"></h4>
+            </div>
+            <input type="button" value="Edit" class="button" id="edit"><input type="button" value="Delete" class="button" id="delete">
+        </div>
+        <div id=listEditorDiv><div id="tooltipEdit" class="makeList" aria-label="More Info">&#x2753;
+            <span class="tooltipText">
+                <h3 style="text-decoration: underline; text-align: center;">Tips:</h3>
+                    <ul>
+                        <li>If you're unsure about the item number, you can reference
+                            "Your List" above.
+                        </li>
+                        <li>You may press the "Close" button at any time to quit editing.</li>
+                    </ul>
+                </span>
+            </div>
+        <label for=itemToEdit>Which item do you want to edit?: Item # <input type=text class=editList id=editItem>
+        <input type=button value=Confirm id=confirmEdit class=button><input type="button" value="Close" id="cancelEdit" class="button">
+            <div id="listEditor">
+                <label for="currentItem">Current Item: <h4 id="currentItem"></h4></label>
+                <label for="currentQuantity">Current Quantity: <h4 id="currentQuantity"></h4></label>
+                <label for="currentCost">Current Cost: <h4 id="currentCost"></h4></label>
+                <input type="button" value="Replace" id="replace" class="button"><input type="button" value="Remove" id="remove" class="button">
+            <div id="newValuesDiv">
+                <label for="newItem">New Item: <input type="text" id="newItem" class="newList"></label><br>
+                <label for="newQuantity">New Quantity: <input type="text" id="newQuantity" class="newList"></label><br>
+                <label for="newCost">New Cost: <input type="text" id="newCost" class="newList"></label><br>
+                <br>
+                <p id="success"></p>
+                </div>
+                <input type="button" value="Done" id="finishEditing" class="button" style="display: none;"><input type="button" value="Edit Another" id="editAnother" class="button" style="display:none">
+            </div>
+        </div>
+
+        <footer style="text-align: center;">
+            <h5>Alex Riley | May 2024</h5>
+        </footer>
+    </body>
+</html>
